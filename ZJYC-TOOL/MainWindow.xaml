@@ -180,11 +180,17 @@
                     </GroupBox>
                 </Grid>
             </TabItem>
-            <TabItem Header="USB" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="106">
+            <TabItem Header="COVT" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="106">
                 <Grid>
                     <Grid.Background>
                         <SolidColorBrush Color="{DynamicResource Color3}"/>
                     </Grid.Background>
+                    <Button x:Name="ReadHexFile" Content="..." HorizontalAlignment="Left" Margin="200,10,0,0" VerticalAlignment="Top" Width="95" Height="44" Click="ReadHexFile_Click">
+                        <Button.Background>
+                            <SolidColorBrush Color="{DynamicResource Color5}"/>
+                        </Button.Background>
+                    </Button>
+                    <Label Content="Hex ==> Bin" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF2D2D30" FontSize="24" Foreground="#FFFBFBFC" Margin="10,10,0,0"/>
                 </Grid>
             </TabItem>
         </TabControl>

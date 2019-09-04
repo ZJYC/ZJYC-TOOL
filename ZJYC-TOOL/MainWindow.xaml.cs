@@ -460,6 +460,21 @@ namespace ZJYC_TOOL
             MutiCopyOutput.Text = Temp;
         }
 
+        private void ReadHexFile_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Multiselect = false;
+            fileDialog.RestoreDirectory = true;
+            fileDialog.Title = "请选择文件";
+            fileDialog.Filter = "单片机Hex文件(*.hex)|*.hex";
+            if (fileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                FileFormat fileFormat = new FileFormat();
+                fileFormat.Hex2BinWithSameName(fileDialog.FileName);
+                System.Windows.MessageBox.Show("OK");
+            }
+        }
+
         public MainWindow()
         {
             InitializeComponent();
