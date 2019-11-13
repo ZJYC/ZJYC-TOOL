@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ZJYC_TOOL"
         mc:Ignorable="d"
-        Title="ZJYC-TOOL:MYK!MYK!みやー姉がやっぱり可愛いぞ!!" Height="550" Width="900" ResizeMode="CanMinimize" Foreground="#FF5FF907" BorderBrush="#FFFF0F04" FontFamily="Consolas" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Center" Loaded="ZJYC_TOOL_Loaded" Background="#FF2D2D30">
+        Title="ZJYC-TOOL:MYK!MYK!みやー姉がやっぱり可愛いぞ!!" Height="550" Width="900" ResizeMode="CanMinimize" Foreground="#FF5FF907" BorderBrush="#FFFF0F04" FontFamily="Consolas" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Center" Loaded="ZJYC_TOOL_Loaded">
     <Window.Resources>
         <Color x:Key="Color1">#FFF9EE00</Color>
         <Color x:Key="Color2">#FF0EF30E</Color>
@@ -15,102 +15,98 @@
         <Color x:Key="Color6">White</Color>
         <Color x:Key="Color7">#FF00E2FF</Color>
     </Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="Night.jpg"/>
+    </Window.Background>
     <Grid>
-        <TabControl HorizontalAlignment="Left" Height="512" VerticalAlignment="Top" Width="884">
-            <TabControl.Background>
-                <SolidColorBrush Color="{DynamicResource Color3}"/>
-            </TabControl.Background>
-            <TabItem Header="Edit">
-                <Grid Background="#FF1A1A1A" Margin="0,0,4,1">
-                    <GroupBox Header="NUM" HorizontalAlignment="Left" Height="175" Margin="10,171,0,0" VerticalAlignment="Top" Width="410" Background="#FF2D2D30" Foreground="#FFFF003F" BorderBrush="#FF00FF29">
+        <TabControl HorizontalAlignment="Left" Height="512" VerticalAlignment="Top" Width="884" Background="{x:Null}">
+            <TabItem Header="Edit" Background="#FFFBFBFB">
+                <Grid Margin="0,0,4,1">
+                    <GroupBox Header="NUM" HorizontalAlignment="Left" Height="175" Margin="10,171,0,0" VerticalAlignment="Top" Width="410" Foreground="#FF0AF014" BorderBrush="#FF00FF29">
                         <Grid HorizontalAlignment="Left" Height="142" Margin="0,-2,-2,0" VerticalAlignment="Top" Width="400">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="89*"/>
                                 <ColumnDefinition Width="91*"/>
                             </Grid.ColumnDefinitions>
-                            <TextBox x:Name="HexAndNum10_In" HorizontalAlignment="Left" Height="34" TextWrapping="Wrap" VerticalAlignment="Top" Width="389" Margin="1,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF2D2D30" Grid.ColumnSpan="2" Foreground="White"/>
-                            <TextBox x:Name="HexAndNum10_Out" HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" VerticalAlignment="Top" Width="389" Margin="0,99,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF2D2D30" Grid.ColumnSpan="2" Foreground="White"/>
-                            <Button x:Name="Button_Convert" Content="Go!" HorizontalAlignment="Left" Margin="1,49,0,0" VerticalAlignment="Top" Width="58" Foreground="#FF1B1B1C" Click="HexAndNum10_Click" Focusable="False" Background="#FF00CBFF" Height="37"/>
-                            <ComboBox x:Name="Hex2Num_Length" HorizontalAlignment="Left" Margin="64,49,0,0" VerticalAlignment="Top" Width="70" Height="37" Background="#FF2D2D30" Foreground="#FFFF0034"/>
-                            <ComboBox x:Name="Hex2Num_Type" HorizontalAlignment="Left" Margin="139,49,0,0" VerticalAlignment="Top" Width="251" Height="37" Background="#FF2D2D30" Grid.ColumnSpan="2" Foreground="#FFFF0034"/>
+                            <TextBox x:Name="HexAndNum10_In" HorizontalAlignment="Left" Height="34" TextWrapping="Wrap" VerticalAlignment="Top" Width="389" Margin="1,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Grid.ColumnSpan="2" Foreground="White"/>
+                            <TextBox x:Name="HexAndNum10_Out" HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" VerticalAlignment="Top" Width="389" Margin="0,99,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Grid.ColumnSpan="2" Foreground="White"/>
+                            <Button x:Name="Button_Convert" Content="Go!" HorizontalAlignment="Left" Margin="1,49,0,0" VerticalAlignment="Top" Width="58" Foreground="#FF0AF014" Click="HexAndNum10_Click" Focusable="False" Background="{x:Null}" Height="37"/>
+                            <ComboBox x:Name="Hex2Num_Length" HorizontalAlignment="Left" Margin="64,49,0,0" VerticalAlignment="Top" Width="70" Height="37" Background="{x:Null}" Foreground="#FFFF0034"/>
+                            <ComboBox x:Name="Hex2Num_Type" HorizontalAlignment="Left" Margin="139,49,0,0" VerticalAlignment="Top" Width="251" Height="37" Background="{x:Null}" Grid.ColumnSpan="2" Foreground="#FFFF0034"/>
                         </Grid>
                     </GroupBox>
-                    <GroupBox Header="String" HorizontalAlignment="Left" Height="171" Margin="10,0,0,0" VerticalAlignment="Top" Width="590" Foreground="#FFFF003F" Background="#FF2D2D30" BorderBrush="#FF00FF29">
+                    <GroupBox Header="String" HorizontalAlignment="Left" Height="171" Margin="10,0,0,0" VerticalAlignment="Top" Width="590" Foreground="#FF0AF014" BorderBrush="#FF00FF29">
                         <Grid HorizontalAlignment="Left" Height="130" Margin="5,1,0,0" VerticalAlignment="Top" Width="570">
-                            <ComboBox x:Name="ComBox_TimeFormat" HorizontalAlignment="Left" Margin="426,5,0,0" VerticalAlignment="Top" Width="130" Height="35" Background="#FF2D2D30" Foreground="#FFFF0057"/>
-                            <ComboBox x:Name="ComBox_CodeCommentFormat" HorizontalAlignment="Left" Margin="426,45,0,0" VerticalAlignment="Top" Width="130" Height="35" Background="#FF2D2D30" Foreground="#FFFF0057"/>
-                            <ComboBox x:Name="ComBox_FuncCommentFormat_Copy" HorizontalAlignment="Left" Margin="426,85,0,0" VerticalAlignment="Top" Width="130" Height="35" Background="#FF2D2D30" Foreground="#FFFF0057"/>
-                            <Label Content="Get time string (Ctrl+Shift+A)" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top" Width="409" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF2D2D30" Foreground="#FFFBFBFC"/>
-                            <Label Content="Get Code Comment(Ctrl+Shift+Z)" HorizontalAlignment="Left" Margin="0,45,0,0" VerticalAlignment="Top" Width="409" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF2D2D30" Foreground="#FFFBFBFC"/>
-                            <Label Content="Get Func Comment(Ctrl+Shift+W)" HorizontalAlignment="Left" Margin="0,85,0,0" VerticalAlignment="Top" Width="409" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF2D2D30" Foreground="#FFFBFBFC"/>
+                            <ComboBox x:Name="ComBox_TimeFormat" HorizontalAlignment="Left" Margin="426,5,0,0" VerticalAlignment="Top" Width="130" Height="35" Background="{x:Null}" Foreground="#FFFF0057"/>
+                            <ComboBox x:Name="ComBox_CodeCommentFormat" HorizontalAlignment="Left" Margin="426,45,0,0" VerticalAlignment="Top" Width="130" Height="35" Background="{x:Null}" Foreground="#FFFF0057"/>
+                            <ComboBox x:Name="ComBox_FuncCommentFormat_Copy" HorizontalAlignment="Left" Margin="426,85,0,0" VerticalAlignment="Top" Width="130" Height="35" Background="{x:Null}" Foreground="#FFFF0057"/>
+                            <Label Content="Get time string (Ctrl+Shift+A)" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top" Width="409" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="#FFFBFBFC"/>
+                            <Label Content="Get Code Comment(Ctrl+Shift+Z)" HorizontalAlignment="Left" Margin="0,45,0,0" VerticalAlignment="Top" Width="409" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="#FFFBFBFC"/>
+                            <Label Content="Get Func Comment(Ctrl+Shift+W)" HorizontalAlignment="Left" Margin="0,85,0,0" VerticalAlignment="Top" Width="409" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="#FFFBFBFC"/>
                         </Grid>
                     </GroupBox>
-                    <GroupBox Header="Get HEX" HorizontalAlignment="Left" Height="175" Margin="425,171,0,0" VerticalAlignment="Top" Width="435" Background="#FF2D2D30" Foreground="#FFFF003F" BorderBrush="#FF00FF29">
+                    <GroupBox Header="Get HEX" HorizontalAlignment="Left" Height="175" Margin="425,171,0,0" VerticalAlignment="Top" Width="435" Foreground="#FF0AF014" BorderBrush="#FF00FF29">
                         <Grid HorizontalAlignment="Left" Height="145" Margin="4,-5,0,0" VerticalAlignment="Top" Width="416">
-                            <TextBox x:Name="GetHex_Input" HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" VerticalAlignment="Top" Width="406" Margin="0,5,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF2D2D30">
+                            <TextBox x:Name="GetHex_Input" HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" VerticalAlignment="Top" Width="406" Margin="0,5,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}">
                                 <TextBox.Foreground>
                                     <SolidColorBrush Color="{DynamicResource Color6}"/>
                                 </TextBox.Foreground>
                             </TextBox>
-                            <Button x:Name="Button_GetHex" Content="Down" HorizontalAlignment="Left" Margin="0,38,0,0" VerticalAlignment="Top" Width="105" Foreground="#FF1B1B1C" Click="Button_GetHex_Click" Focusable="False" Background="#FF00CBFF" Height="33"/>
-                            <TextBox x:Name="GetHex_Output" HorizontalAlignment="Left" Height="59" TextWrapping="Wrap" VerticalAlignment="Top" Width="406" Margin="0,76,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF2D2D30">
+                            <Button x:Name="Button_GetHex" Content="Down" HorizontalAlignment="Left" Margin="0,38,0,0" VerticalAlignment="Top" Width="105" Foreground="#FF0AF014" Click="Button_GetHex_Click" Focusable="False" Background="{x:Null}" Height="33"/>
+                            <TextBox x:Name="GetHex_Output" HorizontalAlignment="Left" Height="59" TextWrapping="Wrap" VerticalAlignment="Top" Width="406" Margin="0,76,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}">
                                 <TextBox.Foreground>
                                     <SolidColorBrush Color="{DynamicResource Color6}"/>
                                 </TextBox.Foreground>
                             </TextBox>
-                            <Button x:Name="Button_GetStrFromHex" Content="UP" HorizontalAlignment="Left" Margin="285,38,0,0" VerticalAlignment="Top" Width="121" Foreground="#FF1B1B1C" Click="Button_GetStrFromHex_Click" Focusable="False" Background="#FF00CBFF" Height="33"/>
-                            <ComboBox x:Name="CodingType" HorizontalAlignment="Left" Margin="110,37,0,0" VerticalAlignment="Top" Width="170" Height="37" Background="#FF2D2D30" Foreground="#FFFF0034"/>
+                            <Button x:Name="Button_GetStrFromHex" Content="UP" HorizontalAlignment="Left" Margin="285,38,0,0" VerticalAlignment="Top" Width="121" Foreground="#FF0AF014" Click="Button_GetStrFromHex_Click" Focusable="False" Background="{x:Null}" Height="33"/>
+                            <ComboBox x:Name="CodingType" HorizontalAlignment="Left" Margin="110,37,0,0" VerticalAlignment="Top" Width="170" Height="37" Background="{x:Null}" Foreground="#FFFF0034"/>
                         </Grid>
                     </GroupBox>
-                    <GroupBox Header="Get Random" HorizontalAlignment="Left" Height="171" Margin="605,0,0,0" VerticalAlignment="Top" Width="255" Background="#FF2D2D30" Foreground="#FFFF003F" BorderBrush="#FF00FF29">
+                    <GroupBox Header="Get Random" HorizontalAlignment="Left" Height="171" Margin="605,0,0,0" VerticalAlignment="Top" Width="255" Foreground="#FF0AF014" BorderBrush="#FF00FF29">
                         <Grid HorizontalAlignment="Left" Height="140" Margin="0,-4,0,0" VerticalAlignment="Top" Width="240">
-                            <TextBox x:Name="Random_Start" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="111" Margin="119,3,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF2D2D30" Foreground="White" FontSize="18"/>
-                            <TextBox x:Name="Random_End" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="111" Margin="119,36,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF2D2D30" Foreground="White" FontSize="18"/>
-                            <TextBox x:Name="Random_Count" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="111" Margin="119,71,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF2D2D30" Foreground="White" FontSize="18"/>
-                            <Button x:Name="Button_GetRandom" Content="Go! MYK!" HorizontalAlignment="Left" Margin="4,105,0,3" Width="226" Foreground="#FF1B1B1C" Click="Button_GetRandom_Click" Focusable="False" Background="#FF00CBFF"/>
-                            <Label Content="From" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Width="114" Height="39" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF2D2D30" FontSize="18" Foreground="White"/>
-                            <Label Content="To" HorizontalAlignment="Left" Margin="0,38,0,0" VerticalAlignment="Top" Width="114" Height="32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF2D2D30" FontSize="18" Foreground="White"/>
-                            <Label Content="Count" HorizontalAlignment="Left" Margin="14,68,0,0" VerticalAlignment="Top" Width="100" Height="32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF2D2D30" FontSize="18" Foreground="White"/>
+                            <TextBox x:Name="Random_Start" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="111" Margin="119,3,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="White" FontSize="18"/>
+                            <TextBox x:Name="Random_End" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="111" Margin="119,36,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="White" FontSize="18"/>
+                            <TextBox x:Name="Random_Count" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="111" Margin="119,71,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="White" FontSize="18"/>
+                            <Button x:Name="Button_GetRandom" Content="Go! MYK!" HorizontalAlignment="Left" Margin="4,105,0,3" Width="226" Foreground="#FF0AF014" Click="Button_GetRandom_Click" Focusable="False" Background="{x:Null}"/>
+                            <Label Content="From" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Width="114" Height="39" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" FontSize="18" Foreground="White"/>
+                            <Label Content="To" HorizontalAlignment="Left" Margin="0,38,0,0" VerticalAlignment="Top" Width="114" Height="32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" FontSize="18" Foreground="White"/>
+                            <Label Content="Count" HorizontalAlignment="Left" Margin="14,68,0,0" VerticalAlignment="Top" Width="100" Height="32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" FontSize="18" Foreground="White"/>
                         </Grid>
                     </GroupBox>
-                    <GroupBox Header="CRC16-RTU" HorizontalAlignment="Left" Height="114" Margin="10,346,0,0" VerticalAlignment="Top" Width="850" Background="#FF2D2D30" BorderBrush="#FF00FF29" Foreground="#FFFF001D">
+                    <GroupBox Header="CRC16-RTU" HorizontalAlignment="Left" Height="114" Margin="10,346,0,0" VerticalAlignment="Top" Width="850" BorderBrush="#FF00FF29" Foreground="#FF0AF014">
                         <Grid HorizontalAlignment="Left" Height="71" Margin="0,-1,0,0" VerticalAlignment="Top" Width="835">
-                            <TextBox x:Name="CRC_Input" HorizontalAlignment="Left" Height="38" TextWrapping="Wrap" VerticalAlignment="Top" Width="825" Background="#FF2D2D30" Foreground="#FFF5F5FA" CaretBrush="#FFD1FF00" SelectionBrush="#FFF3FF00" BorderBrush="#FFFF092A"/>
-                            <TextBox x:Name="CRC_Output" HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" Background="#FF2D2D30" Foreground="#FFF5F5FA" Margin="654,43,0,-5" BorderBrush="#FFFF092A" CaretBrush="#FFFFFF02" SelectionBrush="#FFFDF200"/>
-                            <Button x:Name="Button_GetCRC16" Content="Get CRC" HorizontalAlignment="Left" Margin="0,44,0,-11" Width="118" Foreground="#FF1B1B1C" Click="Button_GetCRC16_Click" Focusable="False" Background="#FF00E2FF"/>
-                            <Button x:Name="Button_CopyWithBigMode" Content="Big To Clip" HorizontalAlignment="Left" Margin="123,44,0,-11" Width="161" Foreground="#FF1B1B1C" Click="Button_CopyWithBigMode_Click" Focusable="False" Background="#FF00E2FF"/>
-                            <Button x:Name="Button_CopyWithSmlMode" Content="Sml To Clip" HorizontalAlignment="Left" Margin="289,43,0,-10" Width="163" Foreground="#FF1B1B1C" Click="Button_CopyWithSmlMode_Click" Focusable="False" Background="#FF00E2FF"/>
+                            <TextBox x:Name="CRC_Input" HorizontalAlignment="Left" Height="38" TextWrapping="Wrap" VerticalAlignment="Top" Width="825" Background="{x:Null}" Foreground="#FFF5F5FA" CaretBrush="#FFD1FF00" SelectionBrush="#FFF3FF00" BorderBrush="#FFFF092A"/>
+                            <TextBox x:Name="CRC_Output" HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" VerticalAlignment="Top" Width="171" Background="{x:Null}" Foreground="#FFF5F5FA" Margin="654,43,0,-5" BorderBrush="#FFFF092A" CaretBrush="#FFFFFF02" SelectionBrush="#FFFDF200"/>
+                            <Button x:Name="Button_GetCRC16" Content="Get CRC" HorizontalAlignment="Left" Margin="0,44,0,-11" Width="118" Foreground="#FF0AF014" Click="Button_GetCRC16_Click" Focusable="False" Background="{x:Null}"/>
+                            <Button x:Name="Button_CopyWithBigMode" Content="Big To Clip" HorizontalAlignment="Left" Margin="123,44,0,-11" Width="161" Foreground="#FF0AF014" Click="Button_CopyWithBigMode_Click" Focusable="False" Background="{x:Null}"/>
+                            <Button x:Name="Button_CopyWithSmlMode" Content="Sml To Clip" HorizontalAlignment="Left" Margin="289,43,0,-10" Width="163" Foreground="#FF0AF014" Click="Button_CopyWithSmlMode_Click" Focusable="False" Background="{x:Null}"/>
                         </Grid>
                     </GroupBox>
                 </Grid>
             </TabItem>
-            <TabItem Header="Calc">
+            <TabItem Header="Calc" Background="#FFFBFBFB">
                 <Grid>
                     <Grid.Background>
-                        <SolidColorBrush Color="#FF2D2D30"/>
+                        <ImageBrush ImageSource="2.jpg"/>
                     </Grid.Background>
-                    <GroupBox Header="Text Process" HorizontalAlignment="Left" Height="231" VerticalAlignment="Top" Width="854" Margin="10,0,0,0" Background="#FF2D2D30" BorderBrush="#FF00FF29" Foreground="#FFFF001D">
+                    <GroupBox Header="Text Process" HorizontalAlignment="Left" Height="231" VerticalAlignment="Top" Width="854" Margin="10,0,0,0" BorderBrush="#FF00FF29" Foreground="#FFFF001D">
                         <Grid HorizontalAlignment="Left" Height="192" Margin="4,-1,0,0" VerticalAlignment="Top" Width="836">
-                            <TextBox x:Name="TextPro_Input" HorizontalAlignment="Left" Height="172" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Background="#FF1A1A1A" Foreground="#FFFBFBFC" Margin="10,10,0,0" BorderBrush="#FFFF00CA" CaretBrush="#FFD8E209" SelectionBrush="#FFF4FF02" FontSize="22"/>
-                            <TextBox x:Name="TextPro_Output" HorizontalAlignment="Left" Height="172" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Background="#FF1A1A1A" Foreground="#FFFBFBFC" BorderBrush="#FFFF00CA" CaretBrush="#FFD8E209" SelectionBrush="#FFF4FF02" Margin="506,10,0,0" FontSize="22"/>
-                            <Label Content="Inter" HorizontalAlignment="Left" VerticalAlignment="Top" Width="76" Height="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF2D2D30" FontSize="24" Foreground="#FFFBFBFC" Margin="335,10,0,0"/>
-                            <TextBox x:Name="TextPro_Interval" HorizontalAlignment="Left" Height="42" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="79" Margin="416,10,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF1A1A1A" Foreground="#FFFBFBFC"/>
-                            <Label Content="Head" HorizontalAlignment="Left" Margin="341,57,0,0" VerticalAlignment="Top" Width="70" Height="43" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF2D2D30" FontSize="24" Foreground="#FFFBFBFC"/>
-                            <TextBox x:Name="TextPro_Header" HorizontalAlignment="Left" Height="43" TextWrapping="Wrap" Text="0x" VerticalAlignment="Top" Width="79" Margin="416,57,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF1A1A1A" Foreground="#FFFBFBFC"/>
-                            <Label Content="Rear" HorizontalAlignment="Left" Margin="340,105,0,0" VerticalAlignment="Top" Width="71" Height="38" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF2D2D30" FontSize="24" Foreground="#FFFBFBFC"/>
-                            <TextBox x:Name="TextPro_Rear" HorizontalAlignment="Left" Height="38" TextWrapping="Wrap" Text="," VerticalAlignment="Top" Width="79" Margin="416,105,0,0" Background="#FF1A1A1A" Foreground="#FFFBFBFC" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                            <Button x:Name="Button_TextProcess" HorizontalAlignment="Left" Margin="341,148,0,10" Width="154" Foreground="#FF1B1B1C" Click="Button_TextProcess_Click" Focusable="False" Background="#FF00E2FF" Content="Go!Go!"/>
+                            <TextBox x:Name="TextPro_Input" HorizontalAlignment="Left" Height="172" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Background="{x:Null}" Foreground="#FFFBFBFC" Margin="10,10,0,0" BorderBrush="#FFFF00CA" CaretBrush="#FFD8E209" SelectionBrush="#FFF4FF02" FontSize="22"/>
+                            <TextBox x:Name="TextPro_Output" HorizontalAlignment="Left" Height="172" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Background="{x:Null}" Foreground="#FFFBFBFC" BorderBrush="#FFFF00CA" CaretBrush="#FFD8E209" SelectionBrush="#FFF4FF02" Margin="506,10,0,0" FontSize="22"/>
+                            <Label Content="Inter" HorizontalAlignment="Left" VerticalAlignment="Top" Width="76" Height="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" FontSize="24" Foreground="#FFFBFBFC" Margin="335,10,0,0"/>
+                            <TextBox x:Name="TextPro_Interval" HorizontalAlignment="Left" Height="42" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="79" Margin="416,10,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="#FFFBFBFC"/>
+                            <Label Content="Head" HorizontalAlignment="Left" Margin="341,57,0,0" VerticalAlignment="Top" Width="70" Height="43" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" FontSize="24" Foreground="#FFFBFBFC"/>
+                            <TextBox x:Name="TextPro_Header" HorizontalAlignment="Left" Height="43" TextWrapping="Wrap" Text="0x" VerticalAlignment="Top" Width="79" Margin="416,57,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="#FFFBFBFC"/>
+                            <Label Content="Rear" HorizontalAlignment="Left" Margin="340,105,0,0" VerticalAlignment="Top" Width="71" Height="38" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" FontSize="24" Foreground="#FFFBFBFC"/>
+                            <TextBox x:Name="TextPro_Rear" HorizontalAlignment="Left" Height="38" TextWrapping="Wrap" Text="," VerticalAlignment="Top" Width="79" Margin="416,105,0,0" Background="{x:Null}" Foreground="#FFFBFBFC" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <Button x:Name="Button_TextProcess" HorizontalAlignment="Left" Margin="341,148,0,10" Width="154" Foreground="#FF28FF00" Click="Button_TextProcess_Click" Focusable="False" Background="{x:Null}" Content="Go!Go!"/>
                         </Grid>
                     </GroupBox>
-                    <GroupBox Header="Deduplication" HorizontalAlignment="Left" Height="231" VerticalAlignment="Top" Width="854" Margin="10,227,0,0" Background="#FF2D2D30" BorderBrush="#FF00FF29" Foreground="#FFFF001D">
+                    <GroupBox Header="Deduplication" HorizontalAlignment="Left" Height="231" VerticalAlignment="Top" Width="854" Margin="10,227,0,0" BorderBrush="#FF00FF29" Foreground="#FFFF001D">
                         <Grid HorizontalAlignment="Left" Height="192" Margin="4,-1,0,0" VerticalAlignment="Top" Width="836">
-                            <TextBox x:Name="DedupInput" HorizontalAlignment="Left" Height="172" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Background="#FF1A1A1A" Foreground="#FFFBFBFC" Margin="10,10,0,0" BorderBrush="#FFFF00CA" CaretBrush="#FFD8E209" SelectionBrush="#FFF4FF02" FontSize="22"/>
-                            <TextBox x:Name="DedupOutput" HorizontalAlignment="Left" Height="172" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Background="#FF1A1A1A" Foreground="#FFFBFBFC" BorderBrush="#FFFF00CA" CaretBrush="#FFD8E209" SelectionBrush="#FFF4FF02" Margin="506,10,0,0" FontSize="22"/>
-                            <Button x:Name="DedupButton" HorizontalAlignment="Left" Margin="341,10,0,148" Width="154" Foreground="#FF1B1B1C" Click="DedupButton_Click" Focusable="False" Content="Go!Go!">
-                                <Button.Background>
-                                    <SolidColorBrush Color="{DynamicResource Color7}"/>
-                                </Button.Background>
-                            </Button>
+                            <TextBox x:Name="DedupInput" HorizontalAlignment="Left" Height="172" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Background="{x:Null}" Foreground="#FFFBFBFC" Margin="10,10,0,0" BorderBrush="#FFFF00CA" CaretBrush="#FFD8E209" SelectionBrush="#FFF4FF02" FontSize="22"/>
+                            <TextBox x:Name="DedupOutput" HorizontalAlignment="Left" Height="172" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Background="{x:Null}" Foreground="#FFFBFBFC" BorderBrush="#FFFF00CA" CaretBrush="#FFD8E209" SelectionBrush="#FFF4FF02" Margin="506,10,0,0" FontSize="22"/>
+                            <Button x:Name="DedupButton" HorizontalAlignment="Left" Margin="341,10,0,148" Width="154" Foreground="#FF28FF00" Click="DedupButton_Click" Focusable="False" Content="Go!Go!" Background="{x:Null}"/>
                         </Grid>
                     </GroupBox>
                 </Grid>
@@ -123,74 +119,67 @@
                     <SolidColorBrush Color="#FFFBFBFB"/>
                 </TabItem.Background>
                 <Grid>
-                    <Grid.Background>
-                        <SolidColorBrush Color="{DynamicResource Color3}"/>
-                    </Grid.Background>
                     <Grid HorizontalAlignment="Left" Height="448" Margin="10,10,0,0" VerticalAlignment="Top" Width="854">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="银河.jpg"/>
+                        </Grid.Background>
                         <GroupBox Header="fileToCSource" HorizontalAlignment="Left" Height="438" Margin="10,0,0,0" VerticalAlignment="Top" Width="834" Foreground="#FFFF001D">
                             <Grid HorizontalAlignment="Left" Height="388" Margin="4,3,0,0" VerticalAlignment="Top" Width="811">
-                                <Button x:Name="FindFiles" Content="..." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="95" Click="FindFiles_Click" Height="44">
-                                    <Button.Background>
-                                        <SolidColorBrush Color="{DynamicResource Color5}"/>
-                                    </Button.Background>
-                                </Button>
-                                <Button x:Name="FileCvtToCSource" Content="Cvt" HorizontalAlignment="Left" Margin="706,0,0,0" VerticalAlignment="Top" Width="95" Height="44" Click="FileCvtToCSource_Click">
-                                    <Button.Background>
-                                        <SolidColorBrush Color="{DynamicResource Color5}"/>
-                                    </Button.Background>
-                                </Button>
-                                <TextBox x:Name="FileNameSelected" HorizontalAlignment="Left" Height="44" TextWrapping="Wrap" VerticalAlignment="Top" Width="591" Background="#FF1A1A1A" Foreground="#FFFBFBFC" Margin="110,0,0,0" BorderBrush="#FFFF00CA" CaretBrush="#FFD8E209" SelectionBrush="#FFF4FF02" FontSize="16"/>
-                                <TextBox x:Name="CSourceContent" HorizontalAlignment="Left" Height="166" TextWrapping="Wrap" VerticalAlignment="Top" Width="791" Background="#FF1A1A1A" Foreground="#FF9F38F5" Margin="10,49,0,0" BorderBrush="#FFFF00CA" CaretBrush="#FFD8E209" SelectionBrush="#FFF4FF02" FontSize="16"/>
-                                <Button x:Name="ExtractNow" Content="Extract" HorizontalAlignment="Left" Margin="706,220,0,0" VerticalAlignment="Top" Width="95" Height="44" Click="ExtractNow_Click">
-                                    <Button.Background>
-                                        <SolidColorBrush Color="{DynamicResource Color5}"/>
-                                    </Button.Background>
-                                </Button>
-                                <Button x:Name="ExtractFileSelest" Content="..." HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top" Width="95" Click="ExtractFileSelest_Click" Height="44">
-                                    <Button.Background>
-                                        <SolidColorBrush Color="{DynamicResource Color5}"/>
-                                    </Button.Background>
-                                </Button>
-                                <TextBox x:Name="FileNameForExtract" HorizontalAlignment="Left" Height="44" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" Background="#FF1A1A1A" Foreground="#FFFBFBFC" Margin="110,220,0,0" BorderBrush="#FFFF00CA" CaretBrush="#FFD8E209" SelectionBrush="#FFF4FF02" FontSize="12"/>
-                                <TextBox x:Name="FileExtractOutput" HorizontalAlignment="Left" Height="109" TextWrapping="Wrap" VerticalAlignment="Top" Width="791" Background="#FF1A1A1A" Foreground="#FF9F38F5" Margin="10,269,0,0" BorderBrush="#FFFF00CA" CaretBrush="#FFD8E209" SelectionBrush="#FFF4FF02" FontSize="16"/>
-                                <TextBox x:Name="Expression" HorizontalAlignment="Left" Height="44" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Background="#FF1A1A1A" Foreground="#FFFBFBFC" Margin="485,220,0,0" BorderBrush="#FFFF00CA" CaretBrush="#FFD8E209" SelectionBrush="#FFF4FF02" FontSize="16" Text="(?&lt;=&quot;).*?(?=&quot;)"/>
-                                <ComboBox x:Name="ExterctFileCoding" HorizontalAlignment="Left" Margin="290,220,0,0" VerticalAlignment="Top" Width="190" Height="44" Background="#FF2D2D30" Foreground="#FFFF0034"/>
+                                <Button x:Name="FindFiles" Content="..." HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="95" Click="FindFiles_Click" Height="44" Background="{x:Null}" Foreground="#FF28FF00"/>
+                                <Button x:Name="FileCvtToCSource" Content="Cvt" HorizontalAlignment="Left" Margin="706,0,0,0" VerticalAlignment="Top" Width="95" Height="44" Click="FileCvtToCSource_Click" Background="{x:Null}" Foreground="#FF28FF00"/>
+                                <TextBox x:Name="FileNameSelected" HorizontalAlignment="Left" Height="44" TextWrapping="Wrap" VerticalAlignment="Top" Width="591" Background="{x:Null}" Foreground="#FFFBFBFC" Margin="110,0,0,0" BorderBrush="#FFFF00CA" CaretBrush="#FFD8E209" SelectionBrush="#FFF4FF02" FontSize="16"/>
+                                <TextBox x:Name="CSourceContent" HorizontalAlignment="Left" Height="166" TextWrapping="Wrap" VerticalAlignment="Top" Width="791" Background="{x:Null}" Foreground="#FF9F38F5" Margin="10,49,0,0" BorderBrush="#FFFF00CA" CaretBrush="#FFD8E209" SelectionBrush="#FFF4FF02" FontSize="16"/>
+                                <Button x:Name="ExtractNow" Content="Extract" HorizontalAlignment="Left" Margin="706,220,0,0" VerticalAlignment="Top" Width="95" Height="44" Click="ExtractNow_Click" Background="{x:Null}" Foreground="#FF28FF00"/>
+                                <Button x:Name="ExtractFileSelest" Content="..." HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top" Width="95" Click="ExtractFileSelest_Click" Height="44" Background="{x:Null}" Foreground="#FF28FF00"/>
+                                <TextBox x:Name="FileNameForExtract" HorizontalAlignment="Left" Height="44" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" Background="{x:Null}" Foreground="#FFFBFBFC" Margin="110,220,0,0" BorderBrush="#FFFF00CA" CaretBrush="#FFD8E209" SelectionBrush="#FFF4FF02" FontSize="12"/>
+                                <TextBox x:Name="FileExtractOutput" HorizontalAlignment="Left" Height="109" TextWrapping="Wrap" VerticalAlignment="Top" Width="791" Background="{x:Null}" Foreground="#FF9F38F5" Margin="10,269,0,0" BorderBrush="#FFFF00CA" CaretBrush="#FFD8E209" SelectionBrush="#FFF4FF02" FontSize="16"/>
+                                <TextBox x:Name="Expression" HorizontalAlignment="Left" Height="44" TextWrapping="Wrap" VerticalAlignment="Top" Width="216" Background="{x:Null}" Foreground="#FFFBFBFC" Margin="485,220,0,0" BorderBrush="#FFFF00CA" CaretBrush="#FFD8E209" SelectionBrush="#FFF4FF02" FontSize="16" Text="(?&lt;=&quot;).*?(?=&quot;)"/>
+                                <ComboBox x:Name="ExterctFileCoding" HorizontalAlignment="Left" Margin="290,220,0,0" VerticalAlignment="Top" Width="190" Height="44" Background="{x:Null}" Foreground="#FFFF0034"/>
                             </Grid>
                         </GroupBox>
                     </Grid>
                 </Grid>
             </TabItem>
-            <TabItem Header="String" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="106">
+            <TabItem Header="String" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="106" Margin="-2,-1,0,0">
                 <TabItem.Background>
                     <SolidColorBrush Color="White"/>
                 </TabItem.Background>
                 <Grid>
                     <Grid.Background>
-                        <SolidColorBrush Color="{DynamicResource Color3}"/>
+                        <ImageBrush ImageSource="1.jpg"/>
                     </Grid.Background>
-                    <GroupBox Header="Muti Copy" HorizontalAlignment="Left" Height="196" Margin="10,10,0,0" VerticalAlignment="Top" Width="854" Background="#FF2D2D30" Foreground="#FFFF003F" BorderBrush="#FF00FF29">
+                    <GroupBox Header="Muti Copy" HorizontalAlignment="Left" Height="206" Margin="10,0,0,0" VerticalAlignment="Top" Width="854" Foreground="#FFFF003F" BorderBrush="#FF00FF29">
                         <Grid HorizontalAlignment="Left" Height="165" Margin="0,-4,-2,0" VerticalAlignment="Top" Width="844">
-                            <TextBox x:Name="MutiCopyInput" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="321" Margin="119,4,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF2D2D30" Foreground="White" FontSize="22"/>
-                            <TextBox x:Name="MutiCopyNum" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="125" Margin="564,3,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF2D2D30" Foreground="White" FontSize="22"/>
-                            <TextBox x:Name="MutiCopyOutput" HorizontalAlignment="Left" Height="108" TextWrapping="Wrap" VerticalAlignment="Top" Width="824" Margin="10,47,0,0" Background="#FF2D2D30" Foreground="White" FontSize="18"/>
-                            <Button x:Name="MutiCopyGo" Content="Go! MYK!" HorizontalAlignment="Left" Margin="694,3,0,123" Width="140" Foreground="#FF1B1B1C" Focusable="False" Background="#FF00CBFF" Click="MutiCopyGo_Click"/>
-                            <Label Content="Input" HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top" Width="104" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF2D2D30" FontSize="22" Foreground="White"/>
-                            <Label Content="Count" HorizontalAlignment="Left" Margin="445,3,0,0" VerticalAlignment="Top" Width="114" Height="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF2D2D30" FontSize="22" Foreground="White"/>
+                            <TextBox x:Name="MutiCopyInput" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="321" Margin="119,4,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="White" FontSize="22"/>
+                            <TextBox x:Name="MutiCopyNum" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="125" Margin="564,3,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="White" FontSize="22"/>
+                            <TextBox x:Name="MutiCopyOutput" HorizontalAlignment="Left" Height="118" TextWrapping="Wrap" VerticalAlignment="Top" Width="824" Margin="10,47,0,0" Background="{x:Null}" Foreground="White" FontSize="18"/>
+                            <Button x:Name="MutiCopyGo" Content="Go! MYK!" HorizontalAlignment="Left" Margin="694,3,0,123" Width="140" Foreground="#FF28FF00" Focusable="False" Background="{x:Null}" Click="MutiCopyGo_Click"/>
+                            <Label Content="Input" HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top" Width="104" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" FontSize="22" Foreground="White"/>
+                            <Label Content="Count" HorizontalAlignment="Left" Margin="445,3,0,0" VerticalAlignment="Top" Width="114" Height="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" FontSize="22" Foreground="White"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Rank" HorizontalAlignment="Left" Height="267" Margin="10,206,0,-5" VerticalAlignment="Top" Width="854" Foreground="#FFFF003F" BorderBrush="#FF00FF29">
+                        <Grid HorizontalAlignment="Left" Height="234" Margin="0,-4,-2,0" VerticalAlignment="Top" Width="844">
+                            <TextBox x:Name="RankInput" HorizontalAlignment="Left" Height="214" TextWrapping="Wrap" VerticalAlignment="Top" Width="345" Margin="10,10,0,0" Background="{x:Null}" Foreground="White" FontSize="22" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
+                            <TextBox x:Name="RankInter" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="73" Margin="361,133,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="White" FontSize="22"/>
+                            <TextBox x:Name="RankOutput" HorizontalAlignment="Left" Height="214" TextWrapping="Wrap" VerticalAlignment="Top" Width="395" Margin="439,10,0,0" Background="{x:Null}" Foreground="White" FontSize="22"  AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
+                            <Button x:Name="RankNow" Content="=&gt;" HorizontalAlignment="Left" Margin="360,174,0,10" Width="73" Foreground="#FF41F30C" Focusable="False" Background="{x:Null}" Click="RankNow_Click" FontSize="36"/>
+                            <TextBox x:Name="MutiCopyNum1_Copy" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" Text="Line" VerticalAlignment="Top" Width="73" Margin="360,10,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="#FF28FF00" FontSize="22" IsReadOnly="True"/>
+                            <TextBox x:Name="MutiCopyNum1_Copy1" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" Text="Inter" VerticalAlignment="Top" Width="73" Margin="361,92,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="#FF28FF00" FontSize="22" IsReadOnly="True"/>
+                            <TextBox x:Name="RankLine" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" Text="4" VerticalAlignment="Top" Width="73" Margin="361,51,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="White" FontSize="22"/>
                         </Grid>
                     </GroupBox>
                 </Grid>
             </TabItem>
-            <TabItem Header="COVT" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="106">
+            <TabItem Header="ETC" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="106" Background="#FFFBFBFB">
                 <Grid>
                     <Grid.Background>
-                        <SolidColorBrush Color="{DynamicResource Color3}"/>
+                        <ImageBrush ImageSource="backgroundDefault-.jpg"/>
                     </Grid.Background>
-                    <Button x:Name="ReadHexFile" Content="..." HorizontalAlignment="Left" Margin="200,10,0,0" VerticalAlignment="Top" Width="95" Height="44" Click="ReadHexFile_Click">
-                        <Button.Background>
-                            <SolidColorBrush Color="{DynamicResource Color5}"/>
-                        </Button.Background>
-                    </Button>
-                    <Label Content="Hex ==> Bin" HorizontalAlignment="Left" VerticalAlignment="Top" Width="190" Height="42" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF2D2D30" FontSize="24" Foreground="#FFFBFBFC" Margin="10,10,0,0"/>
+                    <Label Content="HEX =&gt; BIN" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" Width="440" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" FontSize="22" Foreground="#FF1CF112" BorderBrush="#FFE8108F"/>
+                    <Button x:Name="FindHexFile" Content="..." HorizontalAlignment="Left" Margin="5,50,0,0" VerticalAlignment="Top" Width="70" Click="FindHexFile_Click" Height="41" Background="{x:Null}" Foreground="#FF15D1E4" Focusable="False"/>
+                    <Button x:Name="CvtHex2Bin" Content="CVT" HorizontalAlignment="Left" Margin="370,50,0,0" VerticalAlignment="Top" Width="75" Height="41" Background="{x:Null}" Foreground="#FF15D1E4" Click="CvtHex2Bin_Click" Focusable="False"/>
+                    <TextBox x:Name="FindHexFileName" HorizontalAlignment="Left" Height="41" TextWrapping="Wrap" VerticalAlignment="Top" Width="285" Margin="80,50,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="#FF1CF112" FontSize="16"/>
                 </Grid>
             </TabItem>
         </TabControl>

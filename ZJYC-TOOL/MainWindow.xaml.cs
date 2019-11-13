@@ -74,6 +74,7 @@ namespace ZJYC_TOOL
                 return;
             }
             string Input = HexAndNum10_In.Text;
+            Input = Input.Replace(" ", "");
             ///"1B", "2B", "4B"
             ///"Unsigned To Hex", "Signed To Hex", "Hex To Unsigned", "Hex To Signed", "Hex To Float","Float To Hex"
             try
@@ -460,19 +461,102 @@ namespace ZJYC_TOOL
             MutiCopyOutput.Text = Temp;
         }
 
-        private void ReadHexFile_Click(object sender, RoutedEventArgs e)
+        private string GetBlankString(int Length)
+        {
+            string Res = "";
+            if(Length != 1)
+            {
+                Res = "";
+            }
+            for (int i = 0; i < Length; i++) Res += " ";
+            return Res;
+        }
+
+        private void RankNow_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                #region 将结果保存到list Inuput
+                if (RankInput.Text == "")
+                {
+                    System.Windows.MessageBox.Show("MYK:内容は？");
+                    return;
+                }
+                string InputTemp = RankInput.Text;
+                InputTemp = InputTemp.Replace("\r\n", "\n");
+                List<string> Input = new List<string>();
+                Input.AddRange(InputTemp.Split('\n'));
+                #endregion
+
+                #region 筛选&排序
+                int Inter = int.Parse(RankInter.Text);
+                int MaxLenth = 0;
+                List<string> Second = new List<string>();
+                for (int i = 0; i < Input.Count; i++)
+                {
+                    if (i % Inter == 0)
+                    {
+                        Second.Add(Input[i]);
+                        MaxLenth = (MaxLenth <= Input[i].Length ? Input[i].Length : MaxLenth);
+                    }
+                }
+                #endregion
+
+                #region 排列输出
+                int Line = int.Parse(RankLine.Text);
+                string Third = "";
+                for (int i = 0; i < Second.Count; i++)
+                {
+                    if (i % Line == 0 && i != 0) Third += "\r\n";
+                    Third += GetBlankString(MaxLenth - Input[i].Length + 1) + Input[i];
+                }
+                RankOutput.Text = Third;
+                #endregion
+
+            }
+            catch 
+            {
+                System.Windows.MessageBox.Show("Something wrong,Please check again...");
+            }
+
+        }
+
+        private void FindHexFile_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Multiselect = false;
             fileDialog.RestoreDirectory = true;
             fileDialog.Title = "请选择文件";
-            fileDialog.Filter = "单片机Hex文件(*.hex)|*.hex";
+            fileDialog.Filter = "所有文件(*.*)|*.*";
             if (fileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                FileFormat fileFormat = new FileFormat();
-                fileFormat.Hex2BinWithSameName(fileDialog.FileName);
-                System.Windows.MessageBox.Show("OK");
+                string name = fileDialog.FileName;
+                FindHexFileName.Text = name;
             }
+        }
+
+        private void CvtHex2Bin_Click(object sender, RoutedEventArgs e)
+        {
+            if(FindHexFileName.Text != "")
+            {
+                try
+                {
+                    string FileNameInput = FindHexFileName.Text;
+                    string FileNameOutput = FindHexFileName.Text + ".Bin";
+                    HexToBin H2B = new HexToBin();
+                    byte[] Temp = H2B.ReadHexFileToByte(FileNameInput);
+                    H2B.WritByteToFile(Temp, FileNameOutput);
+                }
+                catch
+                {
+                    System.Windows.MessageBox.Show("Something wrong...");
+                }
+            }
+            else
+            {
+                System.Windows.MessageBox.Show("You should input something...");
+            }
+            
         }
 
         public MainWindow()

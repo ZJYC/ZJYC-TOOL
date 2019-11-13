@@ -12,8 +12,8 @@ using System.Windows;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
 [assembly: AssemblyProduct("ZJYC-TOOL")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2019")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCopyright("ZJYC")]
+[assembly: AssemblyTrademark("5A4A5943")]
 [assembly: AssemblyCulture("")]
 
 // 将 ComVisible 设置为 false 会使此程序集中的类型
@@ -52,4 +52,4 @@ using System.Windows;
 // 方法是按如下所示使用“*”: :
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.1")]
