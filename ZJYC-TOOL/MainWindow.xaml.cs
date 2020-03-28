@@ -184,38 +184,46 @@ namespace ZJYC_TOOL
 
         private void Button_GetRandom_Click(object sender, RoutedEventArgs e)
         {
-            Int32 Start = Int32.Parse(Random_Start.Text);
-            Int32 End = Int32.Parse(Random_End.Text);
-            UInt16 Num = UInt16.Parse(Random_Count.Text);
-
-            String String = "";
-
-            if (Num == 0)
+            try
             {
-                System.Windows.MessageBox.Show("您输入的数值为0");
-                return;
+                Int32 Start = Int32.Parse(Random_Start.Text);
+                Int32 End = Int32.Parse(Random_End.Text);
+                UInt32 Num = UInt32.Parse(Random_Count.Text);
+
+                String String = "";
+
+                if (Num == 0)
+                {
+                    System.Windows.MessageBox.Show("您输入的数值为0");
+                    return;
+                }
+                if (Num > 1000000)
+                {
+                    System.Windows.MessageBox.Show("您输入的数值大于1M");
+                    return;
+                }
+
+                if (Start > End)
+                {
+                    System.Windows.MessageBox.Show("前面的数字应不大于后面的数字");
+                    return;
+                }
+
+                Random RandomTemp = new Random();
+
+                for (UInt32 cnt = 0; cnt < Num; cnt++)
+                {
+                    String += RandomTemp.Next((int)Start, (int)End + 1).ToString();
+                    String += "\r";
+                }
+
+                System.Windows.Clipboard.SetDataObject(String);
             }
-            if (Num > 10000)
+            catch
             {
-                System.Windows.MessageBox.Show("您输入的数值大于10000");
-                return;
+                System.Windows.MessageBox.Show("*^*^*(^*(^(*)_)(*)&)&*&(^");
             }
-
-            if (Start > End)
-            {
-                System.Windows.MessageBox.Show("前面的数字应不大于后面的数字");
-                return;
-            }
-
-            Random RandomTemp = new Random();
-
-            for (UInt16 cnt = 0; cnt < Num; cnt++)
-            {
-                String += RandomTemp.Next((int)Start, (int)End + 1).ToString();
-                String += ",";
-            }
-
-            System.Windows.Clipboard.SetDataObject(String);
+            
         }
 
         private void Button_GetHex_Click(object sender, RoutedEventArgs e)
@@ -557,6 +565,52 @@ namespace ZJYC_TOOL
                 System.Windows.MessageBox.Show("You should input something...");
             }
             
+        }
+
+        private void Button_GetRandomFloat_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Single Start = Single.Parse(Random_Start.Text);
+                Single End = Single.Parse(Random_End.Text);
+                UInt32 Num = UInt32.Parse(Random_Count.Text);
+
+                String String = "";
+
+                if (Num == 0)
+                {
+                    System.Windows.MessageBox.Show("您输入的数值为0");
+                    return;
+                }
+                if (Num > 1000000)
+                {
+                    System.Windows.MessageBox.Show("您输入的数值大于1M");
+                    return;
+                }
+                if (Start > End)
+                {
+                    System.Windows.MessageBox.Show("前面的数字应不大于后面的数字");
+                    return;
+                }
+
+                Random RandomTemp = new Random();
+
+                Single Diff = Start - End;
+                Single Mul = System.Math.Abs( 1000 / Diff);
+                Start *= Mul;
+                End *= Mul;
+                for (UInt32 cnt = 0; cnt < Num; cnt++)
+                {
+                    String += ((RandomTemp.Next((int)(Start), (int)(End)))/ Mul).ToString("F4");
+                    String += "\r";
+                }
+
+                System.Windows.Clipboard.SetDataObject(String);
+            }
+            catch
+            {
+                System.Windows.MessageBox.Show("*^*^*(^*(^(*)_)(*)&)&*&(^");
+            }
         }
 
         public MainWindow()

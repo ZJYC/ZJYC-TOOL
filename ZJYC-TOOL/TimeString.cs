@@ -244,7 +244,7 @@ namespace ZJYC_TOOL
             }
             return (UInt16)((ucCRCHi << 8) | ucCRCLo);
         }
-        private Byte[] CrcInputData = new Byte[1000];
+        private Byte[] CrcInputData = new Byte[100000];
         private byte Len = 0;
         /// <summary>
         /// 字符串输入
@@ -264,9 +264,9 @@ namespace ZJYC_TOOL
                 Len = 0;
                 return;
             }
-            for (int i = 0, j = 0; i < str.Length;)
+            for (int i = 0; i < str.Length;)
             {
-                CrcInputData[j++] = Convert.ToByte(str.Substring(0, 2), 16);
+                CrcInputData[i++] = Convert.ToByte(str.Substring(0, 2), 16);
                 str = str.Remove(0, 2);
             }
             Len = (Byte)(Len / 2);
